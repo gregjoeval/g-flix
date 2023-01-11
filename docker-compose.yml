@@ -89,7 +89,7 @@ services:
       - .env.secret
     volumes:
       - ~/g-flix/config/radarr:/config
-      - /mnt/media/tv:/tv
+      - /mnt/media/movies:/movies
       - /mnt/media/downloads/completed:/downloads
     networks:
       g-flix:
