@@ -1,5 +1,10 @@
 ---
 version: "2.1"
+networks:
+  g-flix:
+    ipam:
+      config:
+        - subnet: 172.20.0.0/24
 services:
   plex:
     image: lscr.io/linuxserver/plex:latest
@@ -14,7 +19,8 @@ services:
       - /mnt/media/tv:/tv
       - /mnt/media/movies:/movies
     networks:
-      - g-flix
+      g-flix:
+        ipv4_address: 172.20.0.1
     ports:
       - 32400:32400
     restart: unless-stopped
@@ -33,7 +39,8 @@ services:
       - /mnt/media/downloads:/downloads
       # - /mnt/media/downloads:/watch # verify what this does
     networks:
-      - g-flix
+      g-flix:
+        ipv4_address: 172.20.0.2
     ports:
       - 9091:9091
       - 51413:51413
@@ -52,7 +59,8 @@ services:
       - ~/g-flix/jackett:/config
       - /mnt/media/downloads/completed:/downloads
     networks:
-      - g-flix
+      g-flix:
+        ipv4_address: 172.20.0.3
     ports:
       - 9117:9117
     restart: unless-stopped
@@ -68,7 +76,8 @@ services:
       - /mnt/media/tv:/tv
       - /mnt/media/downloads/completed:/downloads
     networks:
-      - g-flix
+      g-flix:
+        ipv4_address: 172.20.0.4
     ports:
       - 8989:8989
     restart: unless-stopped
@@ -84,7 +93,8 @@ services:
       - /mnt/media/tv:/tv
       - /mnt/media/downloads/completed:/downloads
     networks:
-      - g-flix
+      g-flix:
+        ipv4_address: 172.20.0.5
     ports:
       - 7878:7878
     restart: unless-stopped
@@ -99,7 +109,8 @@ services:
     volumes:
       - ~/g-flix/ombi:/config
     networks:
-      - g-flix
+      g-flix:
+        ipv4_address: 172.20.0.6
     ports:
       - 3579:3579
     restart: unless-stopped
