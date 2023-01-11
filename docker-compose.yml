@@ -9,11 +9,12 @@ services:
   plex:
     image: lscr.io/linuxserver/plex:latest
     container_name: plex
+    env_file:
+      - .env
+      - .env.secret
     environment:
-      - PUID=1000
-      - PGID=1000
       - VERSION=docker
-      # - PLEX_CLAIM= #optional
+      # - PLEX_CLAIM= # in .env.secret
     volumes:
       - ~/g-flix/config/plex:/config
       - /mnt/media/tv:/tv
@@ -27,10 +28,10 @@ services:
   transmission:
     image: lscr.io/linuxserver/transmission:latest
     container_name: transmission
+    env_file:
+      - .env
+      - .env.secret
     environment:
-      - PUID=1000
-      - PGID=1000
-      - TZ=America/New_York
       - TRANSMISSION_WEB_HOME=/combustion-release/ # try: /flood-for-transmission/
       # - USER=username #optional
       # - PASS=password #optional
@@ -49,10 +50,10 @@ services:
   jackett:
     image: lscr.io/linuxserver/jackett:latest
     container_name: jackett
+    env_file:
+      - .env
+      - .env.secret
     environment:
-      - PUID=1000
-      - PGID=1000
-      - TZ=America/New_York
       - AUTO_UPDATE=true #optional
       # - RUN_OPTS=<run options here> #optional
     volumes:
@@ -67,10 +68,9 @@ services:
   sonarr:
     image: lscr.io/linuxserver/sonarr:latest
     container_name: sonarr
-    environment:
-      - PUID=1000
-      - PGID=1000
-      - TZ=America/New_York
+    env_file:
+      - .env
+      - .env.secret
     volumes:
       - ~/g-flix/config/sonarr:/config
       - /mnt/media/tv:/tv
@@ -84,10 +84,9 @@ services:
   radarr:
     image: lscr.io/linuxserver/radarr:latest
     container_name: radarr
-    environment:
-      - PUID=1000
-      - PGID=1000
-      - TZ=America/New_York
+    env_file:
+      - .env
+      - .env.secret
     volumes:
       - ~/g-flix/config/radarr:/config
       - /mnt/media/tv:/tv
@@ -101,10 +100,9 @@ services:
   overseerr:
     image: lscr.io/linuxserver/overseerr:latest
     container_name: overseerr
-    environment:
-      - PUID=1000
-      - PGID=1000
-      - TZ=America/New_York
+    env_file:
+      - .env
+      - .env.secret
     volumes:
       - ~/g-flix/config/overseerr:/config
     networks:

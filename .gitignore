@@ -1,2 +1,5 @@
 # container config folders
 config/
+
+# secret environment variables
+.env.secret
