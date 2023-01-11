@@ -30,7 +30,7 @@ services:
     environment:
       - PUID=1000
       - PGID=1000
-      - TZ=EST
+      - TZ=America/New_York
       - TRANSMISSION_WEB_HOME=/combustion-release/ # try: /flood-for-transmission/
       # - USER=username #optional
       # - PASS=password #optional
@@ -52,7 +52,7 @@ services:
     environment:
       - PUID=1000
       - PGID=1000
-      - TZ=EST
+      - TZ=America/New_York
       - AUTO_UPDATE=true #optional
       # - RUN_OPTS=<run options here> #optional
     volumes:
@@ -70,7 +70,7 @@ services:
     environment:
       - PUID=1000
       - PGID=1000
-      - TZ=EST
+      - TZ=America/New_York
     volumes:
       - ~/g-flix/sonarr:/config
       - /mnt/media/tv:/tv
@@ -87,7 +87,7 @@ services:
     environment:
       - PUID=1000
       - PGID=1000
-      - TZ=EST
+      - TZ=America/New_York
     volumes:
       - ~/g-flix/radarr:/config
       - /mnt/media/tv:/tv
@@ -104,7 +104,7 @@ services:
     environment:
       - PUID=1000
       - PGID=1000
-      - TZ=EST
+      - TZ=America/New_York
       - BASE_URL=/ombi #optional
     volumes:
       - ~/g-flix/ombi:/config
