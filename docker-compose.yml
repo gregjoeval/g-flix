@@ -15,7 +15,7 @@ services:
       - VERSION=docker
       # - PLEX_CLAIM= #optional
     volumes:
-      - ~/g-flix/plex:/config
+      - ~/g-flix/config/plex:/config
       - /mnt/media/tv:/tv
       - /mnt/media/movies:/movies
     networks:
@@ -35,7 +35,7 @@ services:
       # - USER=username #optional
       # - PASS=password #optional
     volumes:
-      - ~/g-flix/transmission:/config
+      - ~/g-flix/config/transmission:/config
       - /mnt/media/downloads:/downloads
       # - /mnt/media/downloads:/watch # verify what this does
     networks:
@@ -56,7 +56,7 @@ services:
       - AUTO_UPDATE=true #optional
       # - RUN_OPTS=<run options here> #optional
     volumes:
-      - ~/g-flix/jackett:/config
+      - ~/g-flix/config/jackett:/config
       - /mnt/media/downloads/completed:/downloads
     networks:
       g-flix:
@@ -72,7 +72,7 @@ services:
       - PGID=1000
       - TZ=America/New_York
     volumes:
-      - ~/g-flix/sonarr:/config
+      - ~/g-flix/config/sonarr:/config
       - /mnt/media/tv:/tv
       - /mnt/media/downloads/completed:/downloads
     networks:
@@ -89,7 +89,7 @@ services:
       - PGID=1000
       - TZ=America/New_York
     volumes:
-      - ~/g-flix/radarr:/config
+      - ~/g-flix/config/radarr:/config
       - /mnt/media/tv:/tv
       - /mnt/media/downloads/completed:/downloads
     networks:
@@ -106,7 +106,7 @@ services:
       - PGID=1000
       - TZ=America/New_York
     volumes:
-      - ~/g-flix/overseerr:/config
+      - ~/g-flix/config/overseerr:/config
     networks:
       g-flix:
         ipv4_address: 172.20.0.15
