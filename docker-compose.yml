@@ -98,19 +98,18 @@ services:
     ports:
       - 7878:7878
     restart: unless-stopped
-  ombi:
-    image: lscr.io/linuxserver/ombi:latest
-    container_name: ombi
+  overseerr:
+    image: lscr.io/linuxserver/overseerr:latest
+    container_name: overseerr
     environment:
       - PUID=1000
       - PGID=1000
       - TZ=America/New_York
-      - BASE_URL=/ombi #optional
     volumes:
-      - ~/g-flix/ombi:/config
+      - ~/g-flix/overseerr:/config
     networks:
       g-flix:
         ipv4_address: 172.20.0.15
     ports:
-      - 3579:3579
+      - 5055:5055
     restart: unless-stopped
