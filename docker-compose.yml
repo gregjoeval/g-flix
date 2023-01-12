@@ -70,7 +70,7 @@ services:
     volumes:
       - ~/g-flix/config/sonarr:/config
       - /mnt/media/tv:/tv
-      - /mnt/media/downloads/completed:/downloads
+      - /mnt/media/downloads:/downloads
     networks:
       g-flix:
         ipv4_address: 172.20.0.13
@@ -86,7 +86,7 @@ services:
     volumes:
       - ~/g-flix/config/radarr:/config
       - /mnt/media/movies:/movies
-      - /mnt/media/downloads/completed:/downloads
+      - /mnt/media/downloads:/downloads
     networks:
       g-flix:
         ipv4_address: 172.20.0.14
