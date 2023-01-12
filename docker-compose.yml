@@ -32,9 +32,9 @@ services:
       - .env
       - .env.secret
     environment:
-      - TRANSMISSION_WEB_HOME=/combustion-release/ # try: /flood-for-transmission/
-      # - USER=username #optional
-      # - PASS=password #optional
+      - TRANSMISSION_WEB_HOME=/flood-for-transmission/
+      # - USER= # in .env.secret
+      # - PASS= # in .env.secret
     volumes:
       - ~/g-flix/config/transmission:/config
       - /mnt/media/downloads:/downloads
