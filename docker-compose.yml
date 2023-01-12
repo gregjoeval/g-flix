@@ -47,23 +47,19 @@ services:
       - 51413:51413
       - 51413:51413/udp
     restart: unless-stopped
-  jackett:
-    image: lscr.io/linuxserver/jackett:latest
-    container_name: jackett
+  prowlarr:
+    image: lscr.io/linuxserver/prowlarr:latest
+    container_name: prowlarr
     env_file:
       - .env
       - .env.secret
-    environment:
-      - AUTO_UPDATE=true #optional
-      # - RUN_OPTS=<run options here> #optional
     volumes:
-      - ~/g-flix/config/jackett:/config
-      - /mnt/media/downloads/completed:/downloads
+      - ~/g-flix/config/prowlarr:/config
     networks:
       g-flix:
         ipv4_address: 172.20.0.12
     ports:
-      - 9117:9117
+      - 9696:9696
     restart: unless-stopped
   sonarr:
     image: lscr.io/linuxserver/sonarr:latest
