@@ -17,8 +17,8 @@ services:
       # - PLEX_CLAIM= # in .env.secret
     volumes:
       - ~/g-flix/config/plex:/config
-      - /mnt/media/tv:/tv
-      - /mnt/media/movies:/movies
+      - /media/tv:/tv
+      - /media/movies:/movies
     networks:
       g-flix:
         ipv4_address: 172.20.0.10
@@ -37,8 +37,8 @@ services:
       # - PASS= # in .env.secret
     volumes:
       - ~/g-flix/config/transmission:/config
-      - /mnt/media/downloads:/downloads
-      # - /mnt/media/downloads:/watch # verify what this does
+      - /media/downloads:/downloads
+      # - /media/downloads:/watch # verify what this does
     networks:
       g-flix:
         ipv4_address: 172.20.0.11
@@ -69,8 +69,8 @@ services:
       - .env.secret
     volumes:
       - ~/g-flix/config/sonarr:/config
-      - /mnt/media/tv:/tv
-      - /mnt/media/downloads:/downloads
+      - /media/tv:/tv
+      - /media/downloads:/downloads
     networks:
       g-flix:
         ipv4_address: 172.20.0.13
@@ -85,8 +85,8 @@ services:
       - .env.secret
     volumes:
       - ~/g-flix/config/radarr:/config
-      - /mnt/media/movies:/movies
-      - /mnt/media/downloads:/downloads
+      - /media/movies:/movies
+      - /media/downloads:/downloads
     networks:
       g-flix:
         ipv4_address: 172.20.0.14
