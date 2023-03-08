@@ -58,7 +58,7 @@ sudo mount /dev/sda1 /mnt/disk1
 
 # mergerfs
 sudo apt install mergerfs
-sudo mergerfs -o defaults,callow_other,use_ino,cache.files=partial,dropcacheonclose=true,category.create=mfs,moveonenospc=true,minfreespace=1M /mnt/disk* /mnt/media
+sudo mergerfs -o defaults,allow_other,use_ino,cache.files=partial,dropcacheonclose=true,category.create=mfs,moveonenospc=true,minfreespace=1M /mnt/disk* /mnt/media
 
 # create /mnt/media
 mkdir -m a=rwx -p {/mnt/media/downloads,/mnt/media/tv,mnt/media/movies}
@@ -67,7 +67,7 @@ mkdir -m a=rwx -p {/mnt/media/downloads,/mnt/media/tv,mnt/media/movies}
 sudo blkid
 code etc/fstab
 UUID=`<uuid_from_blkid>` `<path_to_mount>` `<file_system_type>` uid=1000,gid=1000,umask=0007,async,auto,rw 0 0
-/mnt/disk* /mnt/media fuse.mergerfs defaults,callow_other,use_ino,cache.files=partial,dropcacheonclose=true,category.create=mfs,moveonenospc=true,minfreespace=1M 0 0
+/mnt/disk* /mnt/media fuse.mergerfs defaults,allow_other,use_ino,cache.files=partial,dropcacheonclose=true,category.create=mfs,moveonenospc=true,minfreespace=1M 0 0
 
 
 # pull down this repo to ~/g-flix
