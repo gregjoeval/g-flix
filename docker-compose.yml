@@ -31,8 +31,7 @@ services:
     env_file:
       - .env
       - .env.secret
-    environment:
-      # - TRANSMISSION_WEB_HOME=/flood-for-transmission/
+    # environment:
       # - USER= # in .env.secret
       # - PASS= # in .env.secret
     volumes:
