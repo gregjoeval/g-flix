@@ -2,7 +2,7 @@
 A self-hosted streaming service.
 
 ## Disclaimer
-This open-source software is intended for personal use only and should not be used for illegal purposes. This software should not be used to infringe on copyright laws or distribute copyrighted material without the express permission of the copyright owner. The user assumes full responsibility for any legal issues that may arise from the use of this software for illegal purposes. The creators of this software disclaim any liability for such illegal usage and strongly recommend using it only for lawful and legitimate purposes.
+This open-source software is intended for personal and/or educational use only and should not be used for illegal purposes. This software should not be used to infringe on copyright laws or distribute copyrighted material without the express permission of the copyright owner. The user assumes full responsibility for any legal issues that may arise from the use of this software for illegal purposes. The creators of this software disclaim any liability for such illegal usage and strongly recommend using it only for lawful and legitimate purposes.
 
 ## Environment Setup
 
