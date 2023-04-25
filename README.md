@@ -1,9 +1,11 @@
 # g-flix
+A self-hosted streaming service.
 
 ## Environment Setup
 
 ### update
-`sudo apt-get update --assume-yes && sudo apt-get upgrade --assume-yes`
+
+```sudo apt-get update --assume-yes && sudo apt-get upgrade --assume-yes```
 
 ### vpn
 `sh <(curl -sSf https://downloads.nordcdn.com/apps/linux/install.sh)`
@@ -79,7 +81,6 @@ go to [plex.tv/claim](plex.tv/claim)
 ### start services
 `docker compose up -d`
 
----
 ## Optional Setup
 
 ### Set Scheduled Reboot
@@ -90,7 +91,6 @@ This might help with memory leak issues. The system was experiencing i/o errors 
 #### update, upgrade, and then reboot
 `0 9 * * * sudo apt-get update --assume-yes && sudo apt-get upgrade --assume-yes && /sbin/shutdown -r now`
 
----
 ## Application Setup
 
 ### Prowlarr
@@ -117,7 +117,6 @@ This might help with memory leak issues. The system was experiencing i/o errors 
 - add plex
 - add Sonarr & Radarr (need api keys)
 
----
 ## References
 
 ### Inspiration
@@ -151,3 +150,5 @@ This might help with memory leak issues. The system was experiencing i/o errors 
 - https://support.nordvpn.com/FAQ/NordVPN-setup-tutorials/1047409772/How-to-configure-a-Raspberry-Pi.htm
 - https://support.nordvpn.com/Connectivity/Linux/1325531132/Installing-and-using-NordVPN-on-Debian-Ubuntu-Raspberry-Pi-Elementary-OS-and-Linux-Mint.htm
 
+## Disclaimer
+This open-source software is intended for personal use only and should not be used for illegal purposes. The personal streaming service provided by this software is designed to handle requests for TV shows and movies from multiple users, and it stores media across a distributed set of hard drives using Docker container orchestration hosted on a Raspberry Pi computer. However, this software should not be used to infringe on copyright laws or distribute copyrighted material without the express permission of the copyright owner. The user assumes full responsibility for any legal issues that may arise from the use of this software for illegal purposes. The creators of this software disclaim any liability for such illegal usage and strongly recommend using it only for lawful and legitimate purposes.
